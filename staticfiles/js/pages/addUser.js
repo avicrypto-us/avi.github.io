@@ -10,11 +10,6 @@ $(document).ready(function() {
       return indexed_array;
     }
   
-    $("#country").change(function() {
-      var optionSelected = $("option:selected", this);
-      $("#countryCode").html(optionSelected.data("code"));
-    })
-
     function addUserFormAjax(event, data) {
       event.preventDefault();
       $.ajax({
@@ -30,12 +25,7 @@ $(document).ready(function() {
         }
       });
     }
-    
-    $("#country").change(function() {
-      var optionSelected = $("option:selected", this);
-      $("#countryCode").html(optionSelected.data("code"));
-    })
-    
+  
     $("input,select,textarea")
       .not("[type=submit]")
       .jqBootstrapValidation({

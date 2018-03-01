@@ -9,24 +9,6 @@
 // clicking a node with id=58 automatically calls GET:'/network/children/58'
 
 $(function() {
-  var nodeTemplate = function(data) {
-    if(data.id) {
-      return `
-        <span>${data.avi_id}</span>
-        <div class="title">${data.name}</div>
-        <div class="content">
-        <p class="m-0">Package: ${data.package}</p>
-        <p class="m-0">Invest: ${data.investment}</p>
-        <p class="m-0">Trans.: ${data.transaction}</p>
-        </div>
-      `;
-    } else {
-      return `
-      <span>No User</span>
-      <div class="title">${data.name}</div>
-    `;
-    }
-  };
   let ajaxURL = {
       children: "/network/children/",
       parent: "/network/parent/",
@@ -38,16 +20,23 @@ $(function() {
       }
     },
     renderTree = function() {
+			console.log("renderTree")
       // TODO: id = getCurrentUserId - implement a function that takes the logged in users user.id
       // then use that here like `/network/init/${id}`
       let oc = $("#chart-container").orgchart({
         data: `/network/init/`,
+        nodeId: "id",
+        nodeTitle: "name",
+        nodeContent: "content",
         ajaxURL: ajaxURL,
         depth: 4,
         zoom: true,
         pan: true,
         toggleSiblingsResp: true,
-        nodeTemplate: nodeTemplate
+        initCompleted: obj => {
+          console.log(`finished rendering network tree`);
+          console.log(obj);
+        }
       });
     };
   renderTree();
