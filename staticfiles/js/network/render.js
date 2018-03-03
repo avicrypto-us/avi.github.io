@@ -37,18 +37,16 @@ $(function() {
         return `/network/families/${node.id}`;
       }
     },
-
     renderTree = function() {
       // TODO: id = getCurrentUserId - implement a function that takes the logged in users user.id
       // then use that here like `/network/init/${id}`
       let oc = $("#chart-container").orgchart({
         data: `/network/init/`,
         ajaxURL: ajaxURL,
-        visibleLevel:4,
-        'collapsed': false,
-        zoom: false,  
-        pan: false,
-        toggleSiblingsResp: false,
+        depth: 4,
+        zoom: true,
+        pan: true,
+        toggleSiblingsResp: true,
         nodeTemplate: nodeTemplate
       });
     };
