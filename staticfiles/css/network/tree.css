@@ -3,9 +3,9 @@
   display: inline-block;
   top: 10px;
   left: 10px;
-  height: 420px;
-  width: calc(100% - 24px);
-  border: 1px dashed grey;
+  height: 100%;
+  width: 100%;
+  /*border: 1px dashed grey;*/
   border-radius: 2px;
   overflow: auto;
   text-align: center;
@@ -13,6 +13,8 @@
 
 .orgchart {
   background: #fff;
+  width: 100%;
+  height: 100%;
 }
 
 .orgchart .node .content {
@@ -21,4 +23,27 @@
 
 .orgchart .node .horizontalEdge {
   top: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+.orgchart .drill-icon {
+  transition: opacity .5s;
+  opacity: 0;
+  right: -10px;
+  top: -10px;
+  z-index: 2;
+  color: #000;
+  font-size: 30px;
+  position: absolute;
+}
+
+.orgchart .drill-icon:hover {
+  color: #000;
+}
+
+.orgchart .node:hover .drill-icon {
+  opacity: 1;
 }
