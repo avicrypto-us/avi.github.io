@@ -13,14 +13,14 @@ jQuery(document).ready(function() {
         success: function(data) {
           data = JSON.parse(data);
           if (data.status == "error") {
-            toastr.warning(data.message, "Error", toastr_options);
+            toastr.warning(data.message, "Error");
           } else {
-            toastr.success(data.message, "Success", toastr_options);
+            toastr.success(data.message, "Success");
           }
         }
       });
     } else {
-      toastr.warning("Select currency for withdraw.", "Error", toastr_options);
+      toastr.warning("Select currency for withdraw.", "Error");
     }
   });
 });
