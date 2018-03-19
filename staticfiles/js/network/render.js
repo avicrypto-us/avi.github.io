@@ -55,6 +55,10 @@ $(function() {
                                  '<td>Binary: </td>'+
                                  '<td>$'+(data.binary_left||0.0)+'</td>'+
                              '</tr>'+
+                             '<tr>'+
+                                 '<td>Total Users: </td>'+
+                                 '<td>'+(data.left_members_count||0)+'</td>'+
+                             '</tr>'+
                          '</tbody> '+
                       '</table>'+
                   '</div>'+
@@ -80,6 +84,10 @@ $(function() {
                              '<tr>'+
                                  '<td>Binary: </td>'+
                                  '<td>$'+(data.binary_right||0.0)+'</td>'+
+                             '</tr>'+
+                             '<tr>'+
+                                 '<td>Total Users: </td>'+
+                                 '<td>'+(data.right_members_count||0)+'</td>'+
                              '</tr>'+
                          '</tbody> '+
                       '</table>'+
